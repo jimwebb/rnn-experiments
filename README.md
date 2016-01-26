@@ -1,13 +1,15 @@
 # Char-RNN experiments
 
-These files are experiments in computer-generated text, with a more readable description of the experiments below. The files can be used with Andrej Karpathy's [Char-RNN](https://github.com/karpathy/char-rnn), an easy-to-install implementation of a character-based recursive neural network. Feed it text (the more the better), let it train on the text for a few hours, and it'll generate sample text that tries to match the original. More info in Andrej's [blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/). 
+These files are experiments in computer-generated text. Just for fun. The experiments use on Andrej Karpathy's [Char-RNN](https://github.com/karpathy/char-rnn) software, an easy-to-install implementation of a character-based recursive neural network. 
 
-Among other things, RNNs and more specifically the Char-RNN software has been used to generate fake [Shakespeare](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) (scroll halfway down), [speeches by President Obama](https://medium.com/@samim/obama-rnn-machine-generated-political-speeches-c8abd18a2ea0), and [baby names](https://plus.google.com/+AndrejKarpathy/posts/GuutNpJKCUp).
+How it works, in simple terms: Feed it text (the more the better), let it train on the text for a few hours, and it'll generate sample text that tries to match the original. More info in Andrej's [blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/). This isn't a totally new idea (Markov chains can do similar things) but the implementation is new and fun and can be startlingly accrate.
 
-My experiments (and some of the results):
+Among other things, RNNs -- and more specifically the Char-RNN software used here -- has generated fake [Shakespeare](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) (scroll halfway down), [speeches by President Obama](https://medium.com/@samim/obama-rnn-machine-generated-political-speeches-c8abd18a2ea0), [baby names](https://plus.google.com/+AndrejKarpathy/posts/GuutNpJKCUp), and episodes of [Friends](https://twitter.com/_Pandy/status/689209034143084547).
+
+My experiments, and some of the results:
 
 ## Experiment: Taylor Swift lyrics
-I used a web scraper to download all of T-Swift's published lyrics, about 10,000 lines/300,000 characters total. I concatenated the lines together, like this:
+I used a web scraper to download all of T-Swift's published lyrics, about 10,000 lines or 300,000 characters total. I concatenated the lines together, like this:
 
 	'Cause that's where you belong
 	Until Brad Pitt comes along
@@ -38,9 +40,11 @@ Decreasing the `seq-length` and `dropout` made it better:
 	Just know what I'm the sutsratter
 	I was here heart and not?
 
+But still not amazing. I think it's because the data set is small -- Karpathy recommends a million characters for a good data set, and Taylor's only written about 300K.
+
 ## Experiment: English Words
 
-This worked much better. Here I used a dictionary file of 109,000 words, one word per line. (No definitions.) A sample from the input file:
+This worked much better, I think partly because single words are easier to fake than complete sentences, or stanzas of songs. Here I used a dictionary file of 109,000 words, one word per line. (No definitions, just the plain words.) Here's a sample from the input file:
 
 	tanking
 	cryostat
@@ -52,9 +56,7 @@ This worked much better. Here I used a dictionary file of 109,000 words, one wor
 	pauperism
 	therapeutic
  
-I shuffled the input file with `gshuf` so that it wouldn't be in alphabetical order, because 109,000 words in ABC order tricks the trainer into thinking that alphabetical order is important in the output.
-
-Here's some output, with default settings:
+I shuffled the input file with `gshuf` so that it wouldn't be in alphabetical order (which tricks the trainer into thinking that alphabetical order is important). Here's what the trained model came up with, with default settings:
 
 	worsawing
 	reascondantly
@@ -73,6 +75,8 @@ Here's some output, with default settings:
 	subscriptionally
 	abasion
 	minnistically
+
+Amazing! They're great candidates for [Sniglets](https://en.wikipedia.org/wiki/Sniglet). Remember those? "Words that don't exist in the English language, but should." A future experiment would be to train a model with both words and definitions.
 
 ## Experiment: Slang Words
 
