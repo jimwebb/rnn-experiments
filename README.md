@@ -9,7 +9,7 @@ Among other things, RNNs -- and more specifically the Char-RNN software used her
 My experiments, and some of the results:
 
 ## Experiment: Taylor Swift lyrics
-I used a web scraper to download all of T-Swift's published lyrics, about 10,000 lines or 300,000 characters total. I concatenated the lines together, like this:
+I used a web scraper to download all of T-Swift's published lyrics, about 10,000 lines or 300,000 characters total. I concatenated the songs together, like this:
 
 	'Cause that's where you belong
 	Until Brad Pitt comes along
