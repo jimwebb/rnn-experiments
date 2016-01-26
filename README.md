@@ -1,6 +1,6 @@
 # Char-RNN experiments
 
-These files are vocabulary sets of experiments in computer-generated text, with a more readable description of the experiments below. The files can be used with Andrej Karpathy's [Char-RNN](https://github.com/karpathy/char-rnn), an easy-to-install implementation of a character-based recursive neural network. Feed it text (the more the better), let it train on the text for a few hours, and it'll generate sample text that tries to match the original. More info in Andrej's [blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/). 
+These files are experiments in computer-generated text, with a more readable description of the experiments below. The files can be used with Andrej Karpathy's [Char-RNN](https://github.com/karpathy/char-rnn), an easy-to-install implementation of a character-based recursive neural network. Feed it text (the more the better), let it train on the text for a few hours, and it'll generate sample text that tries to match the original. More info in Andrej's [blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/). 
 
 Among other things, RNNs and more specifically the Char-RNN software has been used to generate fake [Shakespeare](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) (scroll halfway down), [speeches by President Obama](https://medium.com/@samim/obama-rnn-machine-generated-political-speeches-c8abd18a2ea0), and [baby names](https://plus.google.com/+AndrejKarpathy/posts/GuutNpJKCUp).
 
