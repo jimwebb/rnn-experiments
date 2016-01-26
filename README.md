@@ -1,12 +1,10 @@
 # Char-RNN experiments
 
-These files are implementations of Andrej Karpathy's [Char-RNN](https://github.com/karpathy/char-rnn), an easy-to-install implementation of a character-based recursive neural network. Feed it text (the more the better), let it train on the text for a few hours, and it'll generate sample text that tries to match the original. More info in Andrej's [blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/). Among other things, it's been used to generate [Shakespeare](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) (scroll halfway down), [speeches by President Obama](https://medium.com/@samim/obama-rnn-machine-generated-political-speeches-c8abd18a2ea0), and [baby names](https://plus.google.com/+AndrejKarpathy/posts/GuutNpJKCUp).
+These files are vocabulary sets of experiments in computer-generated text, with a more readable description of the experiments below. The files can be used with Andrej Karpathy's [Char-RNN](https://github.com/karpathy/char-rnn), an easy-to-install implementation of a character-based recursive neural network. Feed it text (the more the better), let it train on the text for a few hours, and it'll generate sample text that tries to match the original. More info in Andrej's [blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/). 
 
-This repo contains training files that you can use to play, if you like. I haven't included the original text here, because (in some cases) it's quite large and (in other cases) it's bound by copyright and probably not cool of me to republish. 
+Among other things, RNNs and more specifically the Char-RNN software has been used to generate fake [Shakespeare](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) (scroll halfway down), [speeches by President Obama](https://medium.com/@samim/obama-rnn-machine-generated-political-speeches-c8abd18a2ea0), and [baby names](https://plus.google.com/+AndrejKarpathy/posts/GuutNpJKCUp).
 
-Want to try this yourself? Some knowledge of the command line is required. Follow the instructions to install [Char-RNN](https://github.com/karpathy/char-rnn), then feel free to point `th train.lua` to the folders in this repo, which have vocabularies ready to go.
-
-Or you can just follow along with my experiments here:
+My experiments (and some of the results):
 
 ## Experiment: Taylor Swift lyrics
 I used a web scraper to download all of T-Swift's published lyrics, about 10,000 lines/300,000 characters total. I concatenated the lines together, like this:
@@ -175,9 +173,15 @@ It didn't really work. Only 3% of the generated passwords were found in the larg
 
 ------------
 
+## Try it yourself
+
+This repo contains training files that you can use to play, if you like. I haven't included the original datasets here, because (in some cases) it's quite large and (in other cases) it's bound by copyright and probably not cool of me to republish. 
+
+Want to try this yourself? Some knowledge of the command line is required. Follow the instructions to install [Char-RNN](https://github.com/karpathy/char-rnn), then feel free to point `th train.lua` to the folders in this repo, which have vocabularies ready to go.
+
 ## Commands
 
-Helpful commands as notes for myself.
+Helpful commands as notes for myself. Your system and usage may vary.
 
 To train a model (using OpenCL on my Macbook):
  
